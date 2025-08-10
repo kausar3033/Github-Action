@@ -28,7 +28,7 @@ Automate the build and deployment of a React app via Docker using GitHub Actions
             CI/CD Tool
             GitHub Actions
             Runner
-            Self-hosted on label ibos4
+            Self-hosted on label levelname
             Deployment Port
             Host 8080 → Container 80
             Final URL
