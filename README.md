@@ -54,7 +54,7 @@ Automate the build and deployment of a React app via Docker using GitHub Actions
       jobs:
         build:
           name: Build Docker Image
-          runs-on: [self-hosted, ibos4]
+          runs-on: [self-hosted, levelname]
       
           steps:
             - name: Checkout code
@@ -69,7 +69,7 @@ Automate the build and deployment of a React app via Docker using GitHub Actions
       
         deploy:
           name: Deploy Application
-          runs-on: [self-hosted, ibos4]
+          runs-on: [self-hosted, levelname]
           needs: build
       
           steps:
@@ -145,13 +145,13 @@ Automate the build and deployment of a React app via Docker using GitHub Actions
 2. Set Ownership (if needed) && Configure the Runner
  (as user ibos, without sudo)
 Make sure your user (e.g., ibos) owns the directory:
-            chown -R ibos:ibos /home/ibos/github-action/test-project/actions-runner/
+            chown -R user:user /home/user/github-action/test-project/actions-runner/
             
             su - ibos
             
-            cd /home/ibos/github-action/test-project/actions-runner/
+            cd /home/user/github-action/test-project/actions-runner/
             
-            ./config.sh --url https://github.com/Zamshed87/Github-Action-Nodejs-project --token APKW6DI3VOSO6K64XB2C4QLISSBOG --name ibos4 --labels ibos4
+            ./config.sh --url https://github.com/kausar3033/Github-Action-Nodejs-project --token APKW6DI3VOSO6K64XB2C4QLISSBOG --name levelname --labels levelname
 
 
 
@@ -183,7 +183,7 @@ Option B – Run as Service (Recommended):
 
 
 
-Visit your app at:  http://10.209.99.209:8080
+Visit your app at:  http://192.168.8.4:8080
 
 Make sure port 8080 is open in your server firewall.
 
@@ -228,11 +228,11 @@ Remove image
 Nginx documentation
 
 
-root@ibos:/home/ibos/github-action/test-project# cat /etc/nginx/sites-available/default
+root@ibos:/home/user/github-action/test-project# cat /etc/nginx/sites-available/default
 
                         server {
                             listen 80;
-                            server_name 10.209.99.209;
+                            server_name 191.168.8.8;
                         
                             # Redirect all HTTP to HTTPS
                             return 301 https://$host$request_uri;
@@ -242,8 +242,8 @@ root@ibos:/home/ibos/github-action/test-project# cat /etc/nginx/sites-available/
                             listen 443 ssl;
                             server_name 10.209.99.209;
                         
-                            ssl_certificate /home/ibos/cert.pem;
-                            ssl_certificate_key /home/ibos/key.pem;
+                            ssl_certificate /home/user/cert.pem;
+                            ssl_certificate_key /home/user/key.pem;
                         
                             ssl_protocols TLSv1.2 TLSv1.3;
                             ssl_ciphers HIGH:!aNULL:!MD5;
