@@ -3,7 +3,7 @@ Repo link : kausar3033/test-project
 📘 Project Documentation – Docker Build & Deploy with GitHub Actions & Self-Hosted Runner (ibos4)
 
 🧾 Objective
-Automate the build and deployment of a React app via Docker using GitHub Actions and a self-hosted runner (label: ibos4) on a Linux server.
+Automate the build and deployment of a React app via Docker using GitHub Actions and a self-hosted runner (label: levelname) on a Linux server.
 
             📁 Project Structure
             test-project/
@@ -143,7 +143,7 @@ Automate the build and deployment of a React app via Docker using GitHub Actions
 
 
 2. Set Ownership (if needed) && Configure the Runner
- (as user ibos, without sudo)
+ (as user user, without sudo)
 Make sure your user (e.g., ibos) owns the directory:
             chown -R user:user /home/user/github-action/test-project/actions-runner/
             
